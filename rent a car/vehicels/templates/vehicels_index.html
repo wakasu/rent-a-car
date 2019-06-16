@@ -1,0 +1,28 @@
+﻿{% extends "app/layout.html" %}
+{% load static %}
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<p>Use this area to provide additional information.</p>
+
+<div class="row">
+{% for vehicel in vehicels %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static vehicel.image %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ vehicel.name }}</h5>
+                <p class="card-text">{{ vehicel.name }}</p>
+                <a href="{% url 'vehicel_detail' vehicel.pk %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

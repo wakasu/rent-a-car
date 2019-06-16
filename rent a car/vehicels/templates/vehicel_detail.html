@@ -1,0 +1,22 @@
+﻿{% extends "app/layout.html" %}
+{% load static %}
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<h1>{{ vehicel.name }}</h1>
+<div class="row">
+    <div class="col-md-8">
+        <img src="{% static vehicel.image %}" alt="" width="100%">
+    </div>
+    <div class="col-md-4">
+        <h5>Vehicel Details:</h5>
+        <p>{{ vehicel.name }}</p>
+        <br>
+        <h5>Technology used:</h5>
+        <p>{{ vehicel.name }}</p>
+    </div>
+</div>
+
+{% endblock %}
